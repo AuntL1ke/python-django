@@ -1,0 +1,42 @@
+[
+    {
+        "model": "movies.Movie",
+        "pk": 1,
+        "fields": {
+            "name": "Тачки",
+            "year": 2006
+        }
+    },
+    {
+        "model": "movies.Movie",
+        "pk": 2,
+        "fields": {
+            "name": "Тачки 2",
+            "year": 2011
+        }
+    },
+    {
+        "model": "movies.Movie",
+        "pk": 3,
+        "fields": {
+            "name": "Тачки 3",
+            "year": 2016
+        }
+    },
+    {
+        "model": "movies.Movie",
+        "pk": 4,
+        "fields": {
+            "name": "Шрек",
+            "year": 2001
+        }
+    },
+    {
+        "model": "movies.Movie",
+        "pk": 5,
+        "fields": {
+            "name": "Король Лев",
+            "year": 1994
+        }
+    }
+]

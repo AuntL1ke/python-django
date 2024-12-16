@@ -1,0 +1,42 @@
+[
+    {
+        "model": "users.User",
+        "pk": 1,
+        "fields": {
+            "name": "John Doe",
+            "phone": "123-456-7890"
+        }
+    },
+    {
+        "model": "users.User",
+        "pk": 2,
+        "fields": {
+            "name": "Jane Smith",
+            "phone": "234-567-8901"
+        }
+    },
+    {
+        "model": "users.User",
+        "pk": 3,
+        "fields": {
+            "name": "Alice Johnson",
+            "phone": "345-678-9012"
+        }
+    },
+    {
+        "model": "users.User",
+        "pk": 4,
+        "fields": {
+            "name": "Bob Brown",
+            "phone": "456-789-0123"
+        }
+    },
+    {
+        "model": "users.User",
+        "pk": 5,
+        "fields": {
+            "name": "Charlie Davis",
+            "phone": "567-890-1234"
+        }
+    }
+]
