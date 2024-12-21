@@ -1,0 +1,29 @@
+{% extends '_layout.html' %}
+
+{% block header %}Create Movie{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+
+    <!-- {% for field in form %}
+    <div class="mb-3">
+        <label for="{{field.id_for_label}}" class="form-label">{{field.label}}</label>
+        {{field}}
+    </div>
+    {% endfor %} -->
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" placeholder="Enter name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Year</label>
+        <input type="number" name="year" class="form-control" placeholder="Enter year">
+    </div>
+   
+
+    <button class="btn btn-success">Create</button>
+
+</form>
+
+{% endblock %}

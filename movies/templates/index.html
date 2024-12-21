@@ -20,12 +20,14 @@
             <td>{{ movie.year }}</td>
             <td>
                 <a href="/movies/details/{{ movie.id }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                <form action="/movies/delete/{{ movie.id }}" method="post" style="display:inline;">
+                <a href="/movies/edit/{{movie.id}}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
+                <!-- <form action="/movies/delete/{{ movie.id }}" method="post" style="display:inline;">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-danger btn-sm">
                         <i class="bi bi-trash"></i>
                     </button>
-                </form>
+                </form> -->
+                <a href="/movies/delete/{{movie.id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
         {% endfor %}
