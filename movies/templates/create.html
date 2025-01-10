@@ -3,7 +3,7 @@
 {% block header %}Create Movie{% endblock %}
 
 {% block content %}
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
 
     <!-- {% for field in form %}
@@ -20,7 +20,10 @@
         <label class="form-label">Year</label>
         <input type="number" name="year" class="form-control" placeholder="Enter year">
     </div>
-   
+    <div class="mb-3">
+        <label class="form-label">Avatar</label>
+        <input type="file" name="avatar" class="form-control" placeholder="Choose user avatar">
+    </div>
 
     <button class="btn btn-success">Create</button>
 

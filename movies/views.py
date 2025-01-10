@@ -26,6 +26,10 @@ def edit(request, id):
 def details(request, id):
 
     movie = get_object_or_404(Movie, id=id)
+    
+    print(movie.avatar)
+    print(movie.avatar.url)
+    
     return render(request, "details.html", {"movie": movie})
 
 def create(request):
@@ -33,7 +37,7 @@ def create(request):
 
   
     if request.method == "POST":
-        form = CreateMovie(request.POST)
+        form = CreateMovie(request.POST, request.FILES)
 
         if form.is_valid():
             form.save()
@@ -47,6 +51,10 @@ def create(request):
 #         movie.delete()
 #         return redirect("list") 
 #     return redirect("list")
+
+def catalog(request):
+    movies = Movie.objects.all()
+    return render(request, "catalog.html", {"movies": movies})
 
 def delete(request, id):
     movie = Movie.objects.get(id=id)
