@@ -11,6 +11,19 @@ body>.container {
     flex-grow: 1;
 }
 
+.movie-details img,
+.movie-edit-form img {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 12px 0;
+}
+.image-block {
+    text-align: center;
+}
+
+
 footer {
     text-align: center;
     padding: 20px;

@@ -14,15 +14,29 @@
     {% endfor %} -->
     <div class="mb-3">
         <label class="form-label">Name</label>
-        <input type="text" name="name" class="form-control" placeholder="Enter name">
+        <input type="text" name="name" class="form-control" placeholder="Enter movie name">
     </div>
     <div class="mb-3">
         <label class="form-label">Year</label>
-        <input type="number" name="year" class="form-control" placeholder="Enter year">
+        <input type="number" name="year" class="form-control" placeholder="Enter release year">
     </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="mb-3">
+                <label class="form-label">{{ form.position.label }}</label>
+                <select class="form-select" name="position">
+                    <option selected>Choose position</option>
+                    {% for key, val in form.fields.position.choices %}
+                    <option value="{{ key }}" {% if key == form.initial.position %}selected{% endif %}>{{ val }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+    
     <div class="mb-3">
         <label class="form-label">Avatar</label>
-        <input type="file" name="avatar" class="form-control" placeholder="Choose user avatar">
+        <input type="file" name="avatar" class="form-control" placeholder="Upload movie avatar">
     </div>
 
     <button class="btn btn-success">Create</button>

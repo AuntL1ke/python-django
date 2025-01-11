@@ -1,12 +1,21 @@
-{% extends "index.html" %}
+{% extends "_layout.html" %}
 
 {% block title %}Movie Details{% endblock %}
 
 {% block content %}
-<div>
+<div class="movie-details">
+    <h3>Movie</h3>
+    <div>
+        {% if movie.avatar %}
+        <img src="{{movie.avatar.url}}" alt="{{movie.name}}">
+        {% else %}
+        <img src="https://m.media-amazon.com/images/I/719uMEB4kiL._AC_UF1000,1000_QL80_.jpg" alt="{{movie.name}}">
+        {% endif %}
+    </div>
     <h3>Movie Details</h3>
     <p>ID: {{ movie.id }}</p>
     <p>Name: {{ movie.name }}</p>
     <p>Year: {{ movie.year }}</p>
+    <p>Position: {{movie.positionName}}</p>
 </div>
 {% endblock %}

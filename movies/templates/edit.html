@@ -3,8 +3,16 @@
 {% block header %}Edit Movie{% endblock %}
 
 {% block content %}
-<form method="POST">
+<form method="POST" class="movie-edit-form" enctype="multipart/form-data">
     {% csrf_token %}
+
+    <div class="image-block">
+        {% if form.avatar.value %}
+        <img src="{{form.avatar.value.url}}" alt="{{form.name.value}}">
+        {% else %}
+        <img src="https://m.media-amazon.com/images/I/719uMEB4kiL._AC_UF1000,1000_QL80_.jpg" alt="{{movie.name}}">
+        {% endif %}
+    </div>
 
     <div class="mb-3">
         <label class="form-label">Name</label>
@@ -14,7 +22,22 @@
         <label class="form-label">Year</label>
         <input type="number" value={{form.year.value}} name="year" class="form-control" placeholder="Enter year">
     </div>
-   
+    <div class="mb-3">
+        <label class="form-label">{{form.position.label}}</label>
+        {{form.position}}
+        <!-- <select class="form-select" name="position">
+            {% for key, val in positions %}
+            <option value="{{key}}">{{val}}</option>
+            {% endfor %}
+        </select> -->
+    </div>
+    <div class="col-3">
+        <div class="mb-3">
+            <label class="form-label">New Avatar</label>
+            <input type="file" name="avatar" class="form-control" placeholder="Choose movie avatar">
+        </div>
+    </div>
+
     <button class="btn btn-success">Edit</button>
 
 </form>
